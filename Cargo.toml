@@ -1,6 +1,6 @@
 [package]
 name = "nutt-web-macro"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "Procedural macro for nutt-web framework"
 license = "Apache-2.0"
@@ -13,6 +13,5 @@ syn = {version = "2.0.77", features = ["extra-traits", "printing", "full"]}
 proc-macro2 = "1.0.86"
 cargo_toml = "0.20.5"
 nutt-conf-parser = {version = "0.2.0" }
-nutt-web = "0.0.0"
 walkdir = "2.5.0"
 toml = "0.8.19"
