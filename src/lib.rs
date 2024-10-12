@@ -127,6 +127,8 @@ fn get_stream(method: &str, fn_items: FnItems) -> TokenStream {
         args_ty_cookie,
     ) = fn_items;
 
+    let vis = item.vis.clone();
+
     let method = match method {
         "get" => quote! { Method::GET },
         "post" => quote! {Method::POST},
@@ -136,7 +138,7 @@ fn get_stream(method: &str, fn_items: FnItems) -> TokenStream {
     };
     let stream = quote! {
 
-        fn #ident() -> Route {
+        #vis fn #ident() -> Route {
             use std::future::Future;
             use std::pin::Pin;
             use nutt_web::http::method::Method;
