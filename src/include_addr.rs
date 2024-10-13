@@ -37,7 +37,7 @@ pub fn include_addr(_input: TokenStream) -> TokenStream {
     let (host, port) = service_conf.get_addr();
     let output = quote! {
         static LOCAL_ADDR: (&str, u16) = (#host, #port);
-        static DOCKER_ADDR: (&str, u16) = (#package_name, 80);
+        static DOCKER_ADDR: (&str, u16) = ("0.0.0.0", #port);
     };
 
     output.into()
